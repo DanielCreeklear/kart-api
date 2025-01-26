@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{22B9A2C5-E340-4A7E-A1D0-F6B94AFF160B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KartAPI", "src\KartAPI\KartAPI.csproj", "{AA07CF0A-31DE-407A-958E-561D2717DAD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KartAPI.Application", "src\KartAPI.Application\KartAPI.Application.csproj", "{65FB3073-315E-4522-987C-8816617C4C0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KartAPI.Domain", "src\KartAPI.Domain\KartAPI.Domain.csproj", "{4E25D55C-70E1-4EA9-A913-D870EC5E7DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KartAPI.Infrastructure", "src\KartAPI.Infrastructure\KartAPI.Infrastructure.csproj", "{8BC76DF5-81E9-4EFB-A004-AAFC5A04B508}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA07CF0A-31DE-407A-958E-561D2717DAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA07CF0A-31DE-407A-958E-561D2717DAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA07CF0A-31DE-407A-958E-561D2717DAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA07CF0A-31DE-407A-958E-561D2717DAD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65FB3073-315E-4522-987C-8816617C4C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65FB3073-315E-4522-987C-8816617C4C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65FB3073-315E-4522-987C-8816617C4C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65FB3073-315E-4522-987C-8816617C4C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E25D55C-70E1-4EA9-A913-D870EC5E7DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E25D55C-70E1-4EA9-A913-D870EC5E7DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E25D55C-70E1-4EA9-A913-D870EC5E7DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E25D55C-70E1-4EA9-A913-D870EC5E7DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC76DF5-81E9-4EFB-A004-AAFC5A04B508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC76DF5-81E9-4EFB-A004-AAFC5A04B508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC76DF5-81E9-4EFB-A004-AAFC5A04B508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC76DF5-81E9-4EFB-A004-AAFC5A04B508}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA07CF0A-31DE-407A-958E-561D2717DAD9} = {22B9A2C5-E340-4A7E-A1D0-F6B94AFF160B}
+		{65FB3073-315E-4522-987C-8816617C4C0E} = {22B9A2C5-E340-4A7E-A1D0-F6B94AFF160B}
+		{4E25D55C-70E1-4EA9-A913-D870EC5E7DEF} = {22B9A2C5-E340-4A7E-A1D0-F6B94AFF160B}
+		{8BC76DF5-81E9-4EFB-A004-AAFC5A04B508} = {22B9A2C5-E340-4A7E-A1D0-F6B94AFF160B}
+	EndGlobalSection
+EndGlobal

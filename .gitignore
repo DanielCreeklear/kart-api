@@ -1,0 +1,54 @@
+# Ignore arquivos de build
+bin/
+obj/
+
+# Ignore configurações de usuário do Visual Studio
+.vs/
+*.user
+*.suo
+
+# Ignore arquivos temporários
+*.log
+*.tmp
+*.temp
+
+# Ignore arquivos de lock do NuGet
+project.lock.json
+project.fragment.lock.json
+
+# Ignore configurações locais e arquivos gerados
+*.ide
+*.pidb
+*.sln.docstates
+
+# Ignore pacotes restaurados do NuGet
+**/packages
+*.nupkg
+*.snupkg
+
+# Ignore arquivos de cache e de configuração do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignore artefatos do Visual Studio Code
+.vscode/
+.history/
+
+# Ignore arquivos de publicação
+.publish/
+.publish_output/
+
+# Ignore Secrets
+secrets.json
+.env
+.env.*
+
+# Ignore arquivos gerados pelo Rider/JetBrains
+.idea/
+*.iml
+out/
+
+# Certifique-se de que não subiremos chaves privadas usadas no projeto
+certificates/
+*.pfx
+*.cer
