@@ -2,24 +2,21 @@ using Microsoft.AspNetCore.Mvc;
 
 [Route("api/[controller]")]
 [ApiController]
-public class KartingCircuitController : ControllerBase
+public class KartingCircuitController(KartingCircuitService circuitService) : ControllerBase
 {
-    private static List<dynamic> circuits = new()
-    {
-        new { Id = 1, Name = "Kartódromo Internacional Granja Viana", Location = "Cotia, SP", PricePerBattery = 150.0 },
-        new { Id = 2, Name = "Kartódromo Aldeia da Serra", Location = "Barueri, SP", PricePerBattery = 130.0 }
-    };
+    private readonly KartingCircuitService _circuitService = circuitService;
 
     [HttpGet]
     public IActionResult GetAllCircuits()
     {
+        var circuits = _circuitService.GetAllCircuits();
         return Ok(circuits);
     }
 
     [HttpGet("{id:int}")]
     public IActionResult GetCircuitById(int id)
     {
-        var circuit = circuits.FirstOrDefault(c => c.Id == id);
+        var circuit = _circuitService.GetCircuitById(id);
         if (circuit == null)
             return NotFound($"Circuit with ID {id} not found.");
         
@@ -32,29 +29,16 @@ public class KartingCircuitController : ControllerBase
         if (newCircuit == null || string.IsNullOrEmpty(newCircuit.Name))
             return BadRequest("Invalid circuit data.");
 
-        int newId = circuits.Max(c => c.Id) + 1;
-        var circuit = new
-        {
-            Id = newId,
-            newCircuit.Name,
-            newCircuit.Location,
-            newCircuit.PricePerBattery
-        };
-
-        circuits.Add(circuit);
-        return CreatedAtAction(nameof(GetCircuitById), new { id = newId }, circuit);
+        var createdCircuit = _circuitService.CreateCircuit(newCircuit);
+        return CreatedAtAction(nameof(GetCircuitById), new { id = createdCircuit.Id }, createdCircuit);
     }
 
     [HttpPut("{id:int}")]
     public IActionResult UpdateCircuit(int id, [FromBody] dynamic updatedCircuit)
     {
-        var existingCircuit = circuits.FirstOrDefault(c => c.Id == id);
+        var existingCircuit = _circuitService.UpdateCircuit(id, updatedCircuit);
         if (existingCircuit == null)
             return NotFound($"Circuit with ID {id} not found.");
-
-        existingCircuit.Name = updatedCircuit.Name ?? existingCircuit.Name;
-        existingCircuit.Location = updatedCircuit.Location ?? existingCircuit.Location;
-        existingCircuit.PricePerBattery = updatedCircuit.PricePerBattery ?? existingCircuit.PricePerBattery;
 
         return NoContent();
     }
@@ -62,11 +46,10 @@ public class KartingCircuitController : ControllerBase
     [HttpDelete("{id:int}")]
     public IActionResult DeleteCircuit(int id)
     {
-        var circuit = circuits.FirstOrDefault(c => c.Id == id);
-        if (circuit == null)
+        var success = _circuitService.DeleteCircuit(id);
+        if (!success)
             return NotFound($"Circuit with ID {id} not found.");
 
-        circuits.Remove(circuit);
         return NoContent();
     }
 }
