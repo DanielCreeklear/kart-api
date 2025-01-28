@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KartAPI.Application\KartAPI.Application.csproj" />
+    <ProjectReference Include="..\KartAPI.Infrastructure\KartAPI.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
